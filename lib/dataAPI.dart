@@ -8,7 +8,7 @@ Future apiCall(String url)async
 {
   http.Response response;
   response = await http.get(Uri.parse(url));
-  if (response.statusCode == 201 ||response.statusCode == 202||response.statusCode == 200||response.statusCode == 203) {
+  if (response.statusCode == 201 ) {
 
       CarbonCalculated = response.body ;
       print(CarbonCalculated) ;
