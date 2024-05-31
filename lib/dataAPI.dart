@@ -8,7 +8,7 @@ Future apiCall(String url)async
 {
   http.Response response;
   response = await http.get(Uri.parse(url));
-  if (response.statusCode == 201 ) {
+  if (response.statusCode == 201 ||response.statusCode ==202||response.statusCode==200||response.statusCode == 203) {
 
       CarbonCalculated = response.body ;
       print(CarbonCalculated) ;
@@ -17,5 +17,5 @@ Future apiCall(String url)async
       return MapCarbon['co2e_kg'];
   }
   else
-    print("api not fetched") ;
+    print(response.statusCode+"Error in recieving data") ;
 }
